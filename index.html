@@ -1,1 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Music Player</title>
 
+<style>
+body {
+  margin:0;
+  background:#111;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  height:100vh;
+}
+
+.music-player {
+  width:300px;
+  height:170px;
+  background:#1a2a2a;
+  border-radius:16px;
+  position:relative;
+  overflow:hidden;
+  box-shadow:0 8px 30px rgba(0,0,0,0.4);
+}
+
+button {
+  position:absolute;
+  top:50%;
+  left:50%;
+  transform:translate(-50%,-50%);
+  padding:10px 20px;
+  border:none;
+  border-radius:10px;
+  cursor:pointer;
+}
+</style>
+</head>
+
+<body>
+
+<div class="music-player">
+  <button id="btn">播放</button>
+</div>
+
+<script>
+const audio = new Audio("https://img.tofaka.com/autoupload/f/-rK7w4Ufuq9KdC5GtEZOlNiO_OyvX7mIgxFBfDMDErs/20260626/VOWB/%E6%98%8E%E6%9C%88%E5%A4%A9%E6%B6%AF.mp3");
+
+let playing = false;
+
+document.getElementById("btn").onclick = () => {
+  if (!playing) {
+    audio.play();
+    playing = true;
+  } else {
+    audio.pause();
+    playing = false;
+  }
+};
+</script>
+
+</body>
+</html>
